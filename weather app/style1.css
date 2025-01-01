@@ -1,0 +1,27 @@
+.weather-container {
+    background: fixed;
+    text-align: center;
+}
+
+.weather {
+    font-size: 20px;
+    margin: 0;
+}
+
+.temp {
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.name {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+body {
+    background-image: url(cool.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
