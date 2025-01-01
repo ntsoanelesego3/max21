@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+#Myp {
+    color: aliceblue;
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#welcome {
+    color: aliceblue;
+}
+
+#chat {
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+    padding-right: 2rem;
+}

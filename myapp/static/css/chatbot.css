@@ -1,0 +1,43 @@
+#chat-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 400px;
+    overflow-y: scroll;
+    font-weight: bold;
+    border-color: blue;
+    cursor: pointer;
+}
+
+#Myp {
+    font-weight: bold;
+}
+
+#user-input {
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    border-color: red;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#send {
+    background-color: darkgrey;
+    font-weight: bold;
+    color: rgb(26, 16, 16);
+    font-style: oblique;
+    width: 75px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: aqua;
+    cursor: pointer;
+}
+
+#send:hover {
+    background-color: salmon;
+}
+
+#send:active {
+    background-color: lightgreen;
+}
