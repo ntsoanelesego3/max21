@@ -12,8 +12,6 @@ click==8.1.8
 colorama==0.4.6
 distro==1.9.0
 Django==5.0
-exceptiongroup==1.2.2
-Flask==3.1.0
 flatbuffers==24.12.23
 gast==0.6.0
 google-ai-generativelanguage==0.6.10
@@ -44,41 +42,14 @@ mdurl==0.1.2
 ml-dtypes==0.4.1
 namex==0.0.8
 numpy==2.0.2
-openai==1.58.1
-opt_einsum==3.4.0
-optree==0.13.1
-packaging==24.2
-proto-plus==1.25.0
-protobuf==5.29.2
-pyasn1==0.6.1
-pyasn1_modules==0.4.1
-PyAudio==0.2.14
-pydantic==2.10.4
-pydantic_core==2.27.2
-Pygments==2.18.0
-pyparsing==3.2.0
 python-dotenv==1.0.1
 requests==2.32.3
-rich==13.9.4
-rsa==4.9
 six==1.17.0
-sniffio==1.3.1
-SpeechRecognition==3.12.0
 sqlparse==0.5.3
-tensorboard==2.18.0
-tensorboard-data-server==0.7.2
-tensorflow==2.18.0
-tensorflow-io-gcs-filesystem==0.31.0
-tensorflow_intel==2.18.0
-termcolor==2.5.0
-tqdm==4.67.1
-typing_extensions==4.12.2
 tzdata==2024.2
 uritemplate==4.1.1
 urllib3==2.3.0
-websockets==14.1
-Werkzeug==3.1.3
-wrapt==1.17.0
+
   # pip frezee > requirements.txt ;;command will add this line
 
 
