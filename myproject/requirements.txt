@@ -10,4 +10,6 @@ tzdata==2024.2
 
   # pip frezee > requirements.txt ;;command will add this line
 
+  #vercle web deployment
+
 
