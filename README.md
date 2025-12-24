@@ -177,6 +177,8 @@ Lesego Ntsoane
 Aspiring Software Engineer with strong interests in backend systems, AI/ML, and real-time applications. Passionate about building scalable, production-quality systems using modern technologies.
 
 📬 Contact
-GitHub: https://github.com/ntsoanelesego3/max21
-
+Phone Number:0672377083
+Email:ntsoanelesego3@gmail.com
 LinkedIn: www.linkedin.com/in/lesego-ntsoane-94ba12274
+
+I WOULD LOVE TO CONNECT WITH YOU
