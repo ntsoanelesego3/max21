@@ -1,4 +1,6 @@
 🚀 Software Engineering Portfolio – Lesego Ntsoane
+
+
 Overview
 This repository showcases a collection of production-oriented software projects demonstrating strong foundations in backend engineering, machine learning, real-time systems, and cloud-integrated applications.
 The projects emphasize clean architecture, scalability, API design, real-time data processing, and applied AI/ML—skills expected of a modern backend or full-stack engineer.
