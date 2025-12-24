@@ -13,11 +13,10 @@ A RESTful backend application built using Spring Boot, designed to demonstrate e
 
 Key Features
 1.	REST API design (CRUD operations)
-2.	Layered architecture (Controller, Service, Repository)
+2.	Layered architecture (Controller,Repository)
 3.	JPA/Hibernate ORM
-4.	PostgreSQL database integration
-5.	Docker-ready configuration
-6.	Exception handling and validation
+4.	H2 database integration
+5.	Exception handling and validation
 
 Tech Stack
 
@@ -163,6 +162,36 @@ What This Demonstrates
 3.	RESTful API design aligned with industry standards
 4.	Applied AI/ML across healthcare, vision, speech, and conversational systems
 5.	Strong emphasis on scalability and production readiness
+
+7.Spring boot Rest API
+Description
+A RESTful backend application built using Spring Boot, designed to demonstrate enterprise-grade API development, dependency injection, database integration and cloud base deployment
+
+Key Features
+1.	REST API design (CRUD operations)
+2.	Layered architecture (Controller,Repository)
+3.	JPA/Hibernate ORM
+4.	Postgres database integration
+5.	Docker compose.yml
+6.	Dockerfile
+7.	Exception handling and validation
+
+
+Tech Stack
+
+1.	Java, Spring Boot
+2.	Spring Data JPA
+3.	Postgres database
+4.	jasper
+5.	Maven
+6.	Docker
+7.	Vercel/docker
+What This Demonstrates
+•	Backend engineering fundamentals
+•	Enterprise application structure
+•	Clean code and maintainability
+•	Rest Api design logic
+
 
 🛠️ Technologies Summary
 
