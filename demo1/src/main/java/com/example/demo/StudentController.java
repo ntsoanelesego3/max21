@@ -29,6 +29,19 @@ public class StudentController {
 
     }
 
+//    delect the data using id
+    @DeleteMapping("/StudentRemoved/{id}")
+    public String removeStudent(@PathVariable("id") int id){
+        return service.delectStudent(id);
+    }
+
+//    @PutMapping("/update/{id}/")
+//    public String NewStudentNumber(@RequestParam String student_number, @PathVariable("id") int id){
+//        service.
+//        return service.updateStudent();
+//
+//    }
+
 
     @RequestMapping("/hello")
     public String hello(){

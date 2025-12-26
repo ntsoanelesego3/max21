@@ -3,8 +3,7 @@ package com.example.demo;
 import com.example.demo.dao.StudentRepo;
 import com.example.demo.model.Student;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,6 +37,22 @@ public class StudentService {
     public List<Student> getAllStudents(){
         return repo.findAll();
 
+    }
+
+    // delete  all student
+    @DeleteMapping
+    public String delectStudent(@RequestParam int id){
+        repo.deleteById(id);
+        return "delected";
+
+    }
+
+    // update data
+
+    @PutMapping
+    public String updateStudent(@RequestParam String student_number) {
+        repo.removeStudentByStudent_number(student_number);
+        return "updated";
     }
 
     // get data of all from db and pass it to controller
