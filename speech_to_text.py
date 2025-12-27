@@ -3,7 +3,7 @@
 import assemblyai as aai
 
 # Replace with your API key
-aai.settings.api_key = "d23b16f061014a1e92f78051b0b90bcf"
+aai.settings.api_key = "API_KEY"
 
 
 season = input("enter season e.g. (Season 6): ")
