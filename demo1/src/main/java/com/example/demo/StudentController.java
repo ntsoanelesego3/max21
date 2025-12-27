@@ -35,12 +35,11 @@ public class StudentController {
         return service.delectStudent(id);
     }
 
-//    @PutMapping("/update/{id}/")
-//    public String NewStudentNumber(@RequestParam String student_number, @PathVariable("id") int id){
-//        service.
-//        return service.updateStudent();
-//
-//    }
+    // update the student record in the database
+    @PutMapping("/update/{id}")
+    public Student NewStudentNumber(@PathVariable("id") int id , @RequestBody Student student){
+       return service.updateStudent(id,student);
+    }
 
 
     @RequestMapping("/hello")

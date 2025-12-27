@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -32,6 +33,7 @@ public class StudentService {
 
     }
 
+
     // get all students from the database
     @GetMapping
     public List<Student> getAllStudents(){
@@ -47,13 +49,24 @@ public class StudentService {
 
     }
 
-    // update data
+    /* update data
+    findById(id) finds the student
+     Optional contains a value(Student records) or null/empty(records does not exist)
+     orElseThrow() returns the Student or throws exception
+     */
 
     @PutMapping
-    public String updateStudent(@RequestParam String student_number) {
-        repo.removeStudentByStudent_number(student_number);
-        return "updated";
+    public Student updateStudent(int id, Student updateMyStudent) {
+        Student student = repo.findById(id)
+                .orElseThrow(() ->
+                        new RuntimeException("Student not found with id: " + id)
+                );
+        student.setFirst_name(updateMyStudent.getFirst_name());
+        student.setLast_name(updateMyStudent.getLast_name());
+        student.setStudent_number(updateMyStudent.getStudent_number());
+        return  repo.save(student);
     }
+
 
     // get data of all from db and pass it to controller
 //    @GetMapping
