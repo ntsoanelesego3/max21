@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Product Image — ShopMyWay</title>
+    <style>
+        /* Simple clean styling — replace with your brand styles later */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 480px;
+        }
+
+        h2 {
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .drop-zone {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .drop-zone:hover { border-color: #4f46e5; }
+
+        .drop-zone input[type="file"] {
+            display: none; /* hidden — clicking the zone triggers it */
+        }
+
+        .drop-zone label {
+            cursor: pointer;
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        /* Preview box — shows selected image before upload */
+        #preview {
+            display: none;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        #preview img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover { background: #4338ca; }
+
+        /* Success / error message box */
+        #message {
+            display: none;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        #message.success { background: #d1fae5; color: #065f46; }
+        #message.error   { background: #fee2e2; color: #991b1b; }
+
+        /* Shows the image already saved in DB (if any) */
+        .current-image { margin-bottom: 1.5rem; text-align: center; }
+        .current-image img { max-width: 100%; max-height: 180px; border-radius: 8px; }
+        .current-image p { color: #666; font-size: 0.85rem; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Upload Product Image</h2>
+
+    <!--
+        th:text = Thymeleaf — injects the productId variable from the Controller
+        So this shows: "Product ID: 3" (or whatever ID was passed in)
+    -->
+    <p class="subtitle">Product ID: <strong th:text="${productId}"></strong></p>
+
+    <!-- Shows the currently saved image if one exists -->
+    <div class="current-image">
+        <p>Current image:</p>
+        <!--
+            th:src = builds the image URL dynamically using the productId
+            This calls your GET /api/v1/product/{id}/image endpoint
+        -->
+        <img th:src="@{/api/v1/product/{id}/image(id=${productId})}"
+             alt="Current product image"
+             onerror="this.parentElement.style.display='none'"/> <!-- hide if no image yet -->
+    </div>
+
+    <!--
+        IMPORTANT FORM SETTINGS:
+        - method="post" = sending data to the server
+        - enctype="multipart/form-data" = REQUIRED for file uploads
+          Without this, the file won't actually be sent!
+        - th:action = posts to /api/v1/product/{productId}/image
+    -->
+    <form th:action="@{/api/v1/product/{id}/image(id=${productId})}"
+          method="post"
+          enctype="multipart/form-data"
+          id="uploadForm">
+
+        <div class="drop-zone" onclick="document.getElementById('imageInput').click()">
+            <p>🖼️ Click to select an image</p>
+            <label>Browse files</label>
+            <!--
+                name="image" MUST match @RequestParam("image") in the Controller
+                If these don't match, Spring can't find the file
+            -->
+            <input type="file"
+                   id="imageInput"
+                   name="image"
+                   accept="image/*"
+                   onchange="previewImage(event)"/>
+        </div>
+
+        <!-- Image preview before uploading -->
+        <div id="preview">
+            <img id="previewImg" src="" alt="Preview"/>
+        </div>
+
+        <button type="submit">Upload Image</button>
+    </form>
+
+    <!-- Success or error message shown after upload -->
+    <div id="message"></div>
+</div>
+
+<script>
+    // Show a preview of the selected image BEFORE uploading
+    function previewImage(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const preview = document.getElementById('preview');
+        const previewImg = document.getElementById('previewImg');
+
+        // FileReader reads the file locally (no server needed)
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            previewImg.src = e.target.result;
+            preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+
+    // Intercept form submit — use fetch() for a smoother experience
+    document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); // stop normal form redirect
+
+        const formData = new FormData(this);
+        const productId = /*[[${productId}]]*/ 0; // Thymeleaf injects the actual ID here
+
+        try {
+            const response = await fetch(`/api/v1/product/${productId}/image`, {
+                method: 'POST',
+                body: formData // no Content-Type header — browser sets it automatically for files
+            });
+
+            const text = await response.text();
+            const msg = document.getElementById('message');
+            msg.style.display = 'block';
+
+            if (response.ok) {
+                msg.className = 'success';
+                msg.textContent = '✅ ' + text;
+            } else {
+                msg.className = 'error';
+                msg.textContent = '❌ ' + text;
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    });
+</script>
+
+</body>
+</html>
