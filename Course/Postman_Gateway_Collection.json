@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "cfa5e128-4ad0-42cf-bb52-f67341e3d64c",
+		"name": "Course & Student System (Via Gateway)",
+		"description": "Postman collection to request course-service and studnet-service via api-gatewayV2 (Port 8766).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Course Service",
+			"item": [
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/course-service/course/allCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"course-service",
+								"course",
+								"allCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Java Programming\",\n  \"description\": \"Learn Java from scratch to advanced concepts.\",\n  \"language\": \"English\",\n  \"level\": \"Beginner\",\n  \"duration\": 40\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8766/course-service/course/addCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"course-service",
+								"course",
+								"addCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Course by Title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/course-service/course/findCourse/Java Programming",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"course-service",
+								"course",
+								"findCourse",
+								"Java Programming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses by Language",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/course-service/course/language/English",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"course-service",
+								"course",
+								"language",
+								"English"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course by Title",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/course-service/course/delete/Java Programming",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"course-service",
+								"course",
+								"delete",
+								"Java Programming"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student Service",
+			"item": [
+				{
+					"name": "Get All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/studnet-service/student/allStudent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"studnet-service",
+								"student",
+								"allStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": 123456789\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8766/studnet-service/student/addStudent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"studnet-service",
+								"student",
+								"addStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"email\": \"john.smith@example.com\",\n  \"phone\": 987654321\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8766/studnet-service/student/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"studnet-service",
+								"student",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/studnet-service/student/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"studnet-service",
+								"student",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Courses (via Feign Client)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/studnet-service/student/allMyCourses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"studnet-service",
+								"student",
+								"allMyCourses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course by Title (via Feign Client)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/studnet-service/student/course/title/Java Programming",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"studnet-service",
+								"student",
+								"course",
+								"title",
+								"Java Programming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses by Language (via Feign Client)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8766/studnet-service/student/course/language/English",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"studnet-service",
+								"student",
+								"course",
+								"language",
+								"English"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

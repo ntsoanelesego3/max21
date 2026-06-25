@@ -1,0 +1,9 @@
+com\cisco\studnetservice\Service\StudnetService.class
+com\cisco\studnetservice\dao\Repo.class
+com\cisco\studnetservice\dto\RequestStudent.class
+com\cisco\studnetservice\Controller\StudentController.class
+com\cisco\studnetservice\dto\CourseResponse.class
+com\cisco\studnetservice\fegin\studentInterface.class
+com\cisco\studnetservice\StudnetServiceApplication.class
+com\cisco\studnetservice\models\Student$StudentBuilder.class
+com\cisco\studnetservice\models\Student.class
