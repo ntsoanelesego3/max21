@@ -1,4 +1,4 @@
-🚀 Software Engineering Portfolio – Lesego Ntsoane
+ Software Engineering Portfolio – Lesego Ntsoane
 
 
 Overview
@@ -80,7 +80,7 @@ What This Demonstrates
 •	Real-time data handling
 •	Integration-focused development
 
-4.Gemini Chatbot
+4.Clone of Gemini Chatbot
 
 Description
 An AI-powered chatbot leveraging Google Gemini / LLM APIs to provide conversational responses. Built with a focus on prompt handling and AI integration.
@@ -155,7 +155,7 @@ What This Demonstrates
 •	Real-time systems
 •	Cloud-backed data synchronization
 
-🧠 Engineering Highlights
+ Engineering Highlights
 
 1.	Clean, modular, and maintainable codebases
 2.	Real-time data processing and cloud integration
@@ -193,19 +193,19 @@ What This Demonstrates
 •	Rest Api design logic
 
 
-🛠️ Technologies Summary
+ Technologies Summary
 
-Languages: Java, Python, JavaScript
-Backend: Spring Boot, REST APIs,Django
-Databases: H2L, Firebase Realtime Database,SQLite
+Languages: Java, Python, JavaScript, SQL
+Backend: Spring Boot, Spring, REST APIs, Django
+Databases: MySQL, NoSQL, PostgreSQL
 AI/ML: Scikit-learn, Computer Vision, LLM APIs
-Tools: Git, Maven, OpenCV
+Tools: Git, GitHub, Docker, Linux(kali Linux), AWS, Jenkins, Maven
 
 📌 About the Author
 Lesego Ntsoane
-Aspiring Software Engineer with strong interests in backend systems, AI/ML, and real-time applications. Passionate about building scalable, production-quality systems using modern technologies.
+Aspiring Software Engineer with strong interests in backend systems, AI/ML, and real-world world. Passionate about building scalable, production-quality systems using modern technologies.
 
-📬 Contact
+Contact
 Phone Number:0672377083
 Email:ntsoanelesego3@gmail.com
 LinkedIn: www.linkedin.com/in/lesego-ntsoane-94ba12274
